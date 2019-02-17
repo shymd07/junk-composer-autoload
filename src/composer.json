@@ -1,0 +1,12 @@
+{
+    "name": "junk/composer-autoload",
+    "description": "composer 공부할 연습",
+    "license": "proprietary",
+
+    "autoload": {
+        "psr-4": {
+            "App\\Controller\\": "app/controller",
+            "App\\Model\\": "app/model"
+        }
+    }
+}
