@@ -1,0 +1,27 @@
+# -*- shell-script -*-
+# Copyright 1999-2019 ImageMagick Studio LLC
+# Definitions of optional features and configuration values for this build.
+# Intended for use by test scripts.
+MAGICK_FEATURES='DPC HDRI Cipher OpenMP'
+top_srcdir='/var/www/html/test/ImageMagick-7.0.9-2'
+top_builddir='/var/www/html/test/ImageMagick-7.0.9-2'
+
+set -a
+COMPARE="/var/www/html/test/ImageMagick-7.0.9-2/utilities/magick compare"
+COMPOSITE="/var/www/html/test/ImageMagick-7.0.9-2/utilities/magick composite"
+CONJURE="/var/www/html/test/ImageMagick-7.0.9-2/utilities/magick conjure"
+CONVERT="/var/www/html/test/ImageMagick-7.0.9-2/utilities/magick convert"
+DISPLAY="/var/www/html/test/ImageMagick-7.0.9-2/utilities/magick display"
+IDENTIFY="/var/www/html/test/ImageMagick-7.0.9-2/utilities/magick identify"
+MAGICK="/var/www/html/test/ImageMagick-7.0.9-2/utilities/magick"
+MONTAGE="/var/www/html/test/ImageMagick-7.0.9-2/utilities/magick montage"
+VALIDATE="/var/www/html/test/ImageMagick-7.0.9-2/tests/validate"
+DRAWTEST="/var/www/html/test/ImageMagick-7.0.9-2/tests/drawtest"
+WANDTEST="/var/www/html/test/ImageMagick-7.0.9-2/tests/wandtest"
+LD_LIBRARY_PATH="/var/www/html/test/ImageMagick-7.0.9-2/MagickCore/.libs:/var/www/html/test/ImageMagick-7.0.9-2/MagickWand/.libs:${LD_LIBRARY_PATH}"
+MAGICK_CODER_MODULE_PATH="/var/www/html/test/ImageMagick-7.0.9-2/coders"
+MAGICK_CONFIGURE_PATH="/var/www/html/test/ImageMagick-7.0.9-2/config:/var/www/html/test/ImageMagick-7.0.9-2/config"
+MAGICK_FILTER_MODULE_PATH="/var/www/html/test/ImageMagick-7.0.9-2/filters"
+MAGICK_FONT="/var/www/html/test/ImageMagick-7.0.9-2/PerlMagick/demo/Generic.ttf"
+PATH="/var/www/html/test/ImageMagick-7.0.9-2/utilities:/var/www/html/test/ImageMagick-7.0.9-2/tests:${PATH}"
+set +a

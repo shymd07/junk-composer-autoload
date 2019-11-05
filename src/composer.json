@@ -8,5 +8,9 @@
             "App\\Controller\\": "app/controller",
             "App\\Model\\": "app/model"
         }
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^6.4",
+        "league/csv": "^9.4"
     }
 }
