@@ -8,7 +8,7 @@ use Intervention\Image;
 
 class AppController
 {
-    public function test()
+    public function test2()
     {
         ini_set('max_execution_time', 1800);
 
@@ -20,7 +20,7 @@ class AppController
 //-        $file = './report/12-13-BJ/20191206105032_salescheck_report.csv';
 //-        $file = './report/12-13-J/20191206105138_salescheck_report.csv';
 //-        $file = './report/12-14-bag/20191206104953_salescheck_report.csv';
-        $file = './report/ogino-san-rolex-image.csv';
+        $file = './report/yokoi-san-sba.csv';
 
         $csv = Reader::createFromPath($file, 'r');
         $csv->setHeaderOffset(0);
@@ -66,5 +66,25 @@ class AppController
         //\File::deleteDirectory($temp);
         exit;
     }
+
+    public function getStatusCode()
+    {
+        ini_set('max_execution_time', 1800);
+
+        $file = './report/yokoi-san-sba.csv';
+
+        $csv = Reader::createFromPath($file, 'r');
+        $csv->setHeaderOffset(0);
+
+
+        $client = new \GuzzleHttp\Client();
+
+
+
+        $response = $client->request('GET', 'https://api.github.com/repos/guzzle/guzzle');
+
+        echo $response->getStatusCode(); // 200
+    }
+
 }
 
