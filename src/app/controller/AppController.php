@@ -14,12 +14,13 @@ class AppController
 
 //-        $file = './report/12-11-accessary/20191206105433_salescheck_report.csv';
 //-        $file = './report/12-11-apparel/20191206105504_salescheck_report.csv';
-        $file = './report/12-11-shoes/20191206105616_salescheck_report.csv';
+//        $file = './report/12-11-shoes/20191206105616_salescheck_report.csv';
 //-        $file = './report/12-11-silverbrand/20191206105547_salescheck_report.csv';
 //-        $file = './report/12-12-watch/20191206105410_salescheck_report.csv';
 //-        $file = './report/12-13-BJ/20191206105032_salescheck_report.csv';
 //-        $file = './report/12-13-J/20191206105138_salescheck_report.csv';
 //-        $file = './report/12-14-bag/20191206104953_salescheck_report.csv';
+        $file = './report/ogino-san-rolex-image.csv';
 
         $csv = Reader::createFromPath($file, 'r');
         $csv->setHeaderOffset(0);
@@ -30,7 +31,7 @@ class AppController
             $urls[] ='http://www.tokyo-star-auction.com/auction/upload/save_image/'.$record['manage_number'].'.JPG';
             $item_id[] =  $record['item_id'];
             $manage_number[] = $record['manage_number'];
-            mkdir("./images/".$record['item_id'], 0777);
+            //.mkdir("./images/".$record['item_id'], 0777);
 
         }
 
@@ -39,8 +40,8 @@ class AppController
             foreach ($urls as $idx => $uri) {
                 yield function () use ($client, $uri, $idx, $item_id,$manage_number) {
                     return $client->getAsync($uri, [
-                        //"sink" => './images/'.$manage_number[$idx].'.JPG',
-                        "sink" => './images/'.$item_id[$idx].'/'.$manage_number[$idx].'.JPG',
+                        "sink" => './images/'.$manage_number[$idx].'.JPG',
+                        //"sink" => './images/'.$item_id[$idx].'/'.$manage_number[$idx].'.JPG',
 
                         "http_errors" => false,
                         ]);
